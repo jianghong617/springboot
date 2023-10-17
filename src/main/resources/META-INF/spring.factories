@@ -1,0 +1,3 @@
+# Spring Initializer
+org.springframework.context.ApplicationContextInitializer=\
+org.example.springboot.initializer.CustomApplicationContextInitializer

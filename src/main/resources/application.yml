@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: springboot-demo
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://192.168.19.69:3306/ips?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: park
+    password: mb8oJTdW_GRQ7kC6LueBjHRzq
+    type: c3p0
+
+#context:
+#  initializer:
+#    classes: org.example.springboot.initializer.CustomApplicationContextInitializer
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: '%red(%d{yyyy-MM-dd HH:mm:ss.SSS}) %red([${spring.application.name}]) %red([%X{traceId}]) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger) %cyan(%msg%n) %ex{10}'
