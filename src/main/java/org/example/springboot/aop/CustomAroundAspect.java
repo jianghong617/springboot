@@ -22,9 +22,9 @@ public class CustomAroundAspect {
 
     @Around("pointcut()")
     public Object controllerAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("环绕开始...");
+        System.out.println("CustomAroundAspect->环绕通知开始");
         Object proceed = joinPoint.proceed();
-        System.out.println("环绕结束");
+        System.out.println("CustomAroundAspect->环绕通知结束");
 
         return proceed;
     }

@@ -11,18 +11,16 @@ import org.springframework.stereotype.Component;
  * @since 2.2.0
  */
 @Component
-public class CustomFactoryBean implements FactoryBean<CustomFactoryBean.CustomFactoryInnerBean> {
+public class CustomFactoryBean implements FactoryBean<CustomFactoryBean.CustomInnerFactoryBean> {
 
     @Override
-    public CustomFactoryInnerBean getObject() throws Exception {
-        System.out.println("CustomFactoryBean->getObject()");
-        return new CustomFactoryInnerBean();
+    public CustomInnerFactoryBean getObject() throws Exception {
+        return new CustomInnerFactoryBean();
     }
 
     @Override
     public Class<?> getObjectType() {
-//        System.out.println("CustomFactoryBean->getObjectType()");
-        return CustomFactoryBean.CustomFactoryInnerBean.class;
+        return CustomFactoryBean.CustomInnerFactoryBean.class;
     }
 
     @Override
@@ -30,7 +28,7 @@ public class CustomFactoryBean implements FactoryBean<CustomFactoryBean.CustomFa
         return FactoryBean.super.isSingleton();
     }
 
-    public static class CustomFactoryInnerBean {
+    public static class CustomInnerFactoryBean {
 
     }
 }

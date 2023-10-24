@@ -1,8 +1,5 @@
 package org.example.springboot.listener;
 
-//import jakarta.servlet.ServletRequestEvent;
-//import jakarta.servlet.ServletRequestListener;
-
 import javax.servlet.ServletRequestEvent;
 import javax.servlet.ServletRequestListener;
 
@@ -17,11 +14,11 @@ public class CustomServletRequestListener implements ServletRequestListener {
 
     @Override
     public void requestInitialized(ServletRequestEvent sre) {
-        System.out.println("请求对象初始化");
+        System.out.println("spring->ServletRequestListener->requestInitialized");
     }
 
     @Override
     public void requestDestroyed(ServletRequestEvent sre) {
-        System.out.println("请求对象销毁");
+        System.out.println("spring->ServletRequestListener->requestDestroyed");
     }
 }

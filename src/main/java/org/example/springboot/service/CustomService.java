@@ -8,6 +8,7 @@ package org.example.springboot.service;
  * @since 2.2.0
  */
 public interface CustomService {
+
     /**
      * hello
      *

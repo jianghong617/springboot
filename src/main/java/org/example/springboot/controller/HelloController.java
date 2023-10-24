@@ -1,7 +1,5 @@
 package org.example.springboot.controller;
 
-//import jakarta.servlet.http.HttpServletRequest;
-//import jakarta.servlet.http.HttpSession;
 import org.example.springboot.dto.UserDTO;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
@@ -26,15 +24,18 @@ public class HelloController implements BeanFactoryAware {
 
     private BeanFactory beanFactory;
 
+    @Override
+    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
+        this.beanFactory = beanFactory;
+    }
+
     @GetMapping("/hello")
     public String hello(@RequestParam String name, HttpServletRequest request) {
         HttpSession session = request.getSession();
         session.setAttribute("name", "jianghong");
 
-        System.out.println("sessionId: " + session.getId());
-
         LocalDateTime expireTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(session.getMaxInactiveInterval()), ZoneId.systemDefault());
-        System.out.println("过期时间：" + expireTime);
+        System.out.println("session信息: sessionId:" + session.getId() + ", 过期时间:" + expireTime);
         return "Hello " + name;
     }
 
@@ -47,10 +48,5 @@ public class HelloController implements BeanFactoryAware {
     public String test() {
         CustomController bean = this.beanFactory.getBean(CustomController.class);
         return "hello " + bean.getName();
-    }
-
-    @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
-        this.beanFactory = beanFactory;
     }
 }

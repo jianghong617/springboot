@@ -1,9 +1,5 @@
 package org.example.springboot.filter;
 
-//import jakarta.servlet.FilterChain;
-//import jakarta.servlet.ServletException;
-//import jakarta.servlet.ServletRequest;
-//import jakarta.servlet.ServletResponse;
 import org.springframework.web.filter.GenericFilterBean;
 
 import javax.servlet.FilterChain;
@@ -23,8 +19,8 @@ public class CustomFilter extends GenericFilterBean {
 
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("进入自定义过滤器....");
+        System.out.println("CustomFilter->doFilter->开始...");
         filterChain.doFilter(request, response);
-        System.out.println("又来到了自定义过滤器....");
+        System.out.println("CustomFilter->doFilter->结束...");
     }
 }

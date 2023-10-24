@@ -1,9 +1,5 @@
 package org.example.springboot.listener;
 
-//import jakarta.servlet.ServletContext;
-//import jakarta.servlet.http.HttpSessionEvent;
-//import jakarta.servlet.http.HttpSessionListener;
-
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
@@ -21,24 +17,23 @@ public class CustomHttpSessionListener implements HttpSessionListener {
 
     @Override
     public void sessionCreated(HttpSessionEvent httpSessionEvent) {
+        System.out.println("servlet->HttpSessionListener->sessionCreated");
         ServletContext servletContext = httpSessionEvent.getSession().getServletContext();
-        Integer total = (Integer) servletContext.getAttribute("ONLINE_USERS_TOTAL");
-        if (ONLINE_USERS_TOTAL == 0) {
-            servletContext.setAttribute("ONLINE_USERS_TOTAL", 1);
-        } else {
-            servletContext.setAttribute("ONLINE_USERS_TOTAL", total);
+
+        synchronized (this) {
+            ONLINE_USERS_TOTAL++;
+            servletContext.setAttribute("ONLINE_USERS_TOTAL", ONLINE_USERS_TOTAL);
         }
-        ONLINE_USERS_TOTAL++;
-        System.out.println(ONLINE_USERS_TOTAL + " login");
-        System.out.println("会话初始化");
     }
 
     @Override
     public void sessionDestroyed(HttpSessionEvent httpSessionEvent) {
+        System.out.println("servlet->HttpSessionListener->sessionDestroyed");
         ServletContext application = httpSessionEvent.getSession().getServletContext();
-        ONLINE_USERS_TOTAL--;
-        application.setAttribute("ONLINE_USERS_TOTAL", ONLINE_USERS_TOTAL);
-        System.out.println(ONLINE_USERS_TOTAL + " logout");
-        System.out.println("会话销毁");
+
+        synchronized (this) {
+            ONLINE_USERS_TOTAL--;
+            application.setAttribute("ONLINE_USERS_TOTAL", ONLINE_USERS_TOTAL);
+        }
     }
 }

@@ -1,6 +1,9 @@
 package org.example.springboot.config;
 
-import org.example.springboot.service.impl.TestService;
+import org.example.springboot.service.ImportSelectorService;
+import org.example.springboot.service.ImportService;
+import org.example.springboot.service.impl.ImportSelectorServiceImpl;
+import org.example.springboot.service.impl.ImportServiceImpl;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
@@ -12,8 +15,10 @@ import org.springframework.context.annotation.Import;
  * @since 2.2.0
  */
 @Configuration
-//@Import(value = OtherServiceImpl.class)
-@Import(value = TestService.class)
+@Import(value = {
+        ImportServiceImpl.class,
+        ImportSelectorServiceImpl.class
+})
 public class CustomConfigure {
 
 }

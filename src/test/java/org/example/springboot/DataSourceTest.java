@@ -25,18 +25,14 @@ public class DataSourceTest {
 
     @Test
     void test() throws SQLException {
-        System.out.println(dataSource.getClass());
         Connection connection = dataSource.getConnection();
         PreparedStatement preparedStatement = connection.prepareStatement("select * from sys_user");
         ResultSet resultSet = preparedStatement.executeQuery();
-        System.out.println(resultSet);
 
-        while(resultSet.next()) {
+        while (resultSet.next()) {
             System.out.println(resultSet.getString("account"));
             System.out.println(resultSet.getString("name"));
-
             System.out.println("################################");
         }
-
     }
 }

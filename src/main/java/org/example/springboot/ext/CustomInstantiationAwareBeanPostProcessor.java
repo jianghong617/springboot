@@ -1,7 +1,8 @@
 package org.example.springboot.ext;
 
+import org.example.springboot.service.CustomService;
+import org.example.springboot.service.impl.CustomServiceImpl;
 import org.springframework.beans.BeansException;
-import org.springframework.beans.MutablePropertyValues;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 
@@ -16,14 +17,8 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
 
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        if (beanName.equals("customServiceImpl")) {
-//            ReflectionUtils.doWithFields(beanClass, (field -> {
-//                ReflectionUtils.makeAccessible(field);
-//                if (field.getName().equals("name")) {
-//                    field.set("name", "么么哥");
-//                }
-//            }));
-            System.out.println("CustomInstantiationAwareBeanPostProcessor->postProcessBeforeInstantiation()");
+        if (beanClass.equals(CustomServiceImpl.class)) {
+            System.out.println("spring->InstantiationAwareBeanPostProcessor->postProcessBeforeInstantiation");
         }
         return null;
     }
@@ -31,7 +26,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
     @Override
     public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
         if (beanName.equals("customServiceImpl")) {
-            System.out.println("CustomInstantiationAwareBeanPostProcessor->postProcessAfterInstantiation()");
+            System.out.println("spring->InstantiationAwareBeanPostProcessor->postProcessAfterInstantiation");
         }
         return true;
     }
@@ -39,11 +34,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
     @Override
     public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
         if (beanName.equals("customServiceImpl")) {
-            System.out.println("CustomInstantiationAwareBeanPostProcessor->postProcessProperties()");
-
-            MutablePropertyValues  mutablePropertyValues = new MutablePropertyValues();
-            mutablePropertyValues.addPropertyValue("name", "change again!");
-            pvs = mutablePropertyValues;
+            System.out.println("spring->InstantiationAwareBeanPostProcessor->postProcessProperties");
         }
         return pvs;
     }
@@ -51,7 +42,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
         if (beanName.equals("customServiceImpl")) {
-            System.out.println("CustomInstantiationAwareBeanPostProcessor->postProcessBeforeInitialization()");
+            System.out.println("spring->InstantiationAwareBeanPostProcessor->postProcessBeforeInitialization");
         }
         return bean;
     }
@@ -59,7 +50,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (beanName.equals("customServiceImpl")) {
-            System.out.println("CustomInstantiationAwareBeanPostProcessor->postProcessAfterInitialization()");
+            System.out.println("spring->InstantiationAwareBeanPostProcessor->postProcessAfterInitialization");
         }
         return bean;
     }

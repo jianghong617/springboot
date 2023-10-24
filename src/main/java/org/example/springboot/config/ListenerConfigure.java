@@ -1,6 +1,5 @@
 package org.example.springboot.config;
 
-import org.example.springboot.listener.CustomEventListener;
 import org.example.springboot.listener.CustomHttpSessionListener;
 import org.example.springboot.listener.CustomServletContextListener;
 import org.example.springboot.listener.CustomServletRequestListener;
@@ -30,10 +29,5 @@ public class ListenerConfigure {
     @Bean
     public CustomServletRequestListener customServletRequestListener() {
         return new CustomServletRequestListener();
-    }
-
-    @Bean
-    public CustomEventListener customEventListener() {
-        return new CustomEventListener();
     }
 }

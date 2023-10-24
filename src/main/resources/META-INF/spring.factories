@@ -1,3 +1,16 @@
+# Spring Listener
+org.springframework.context.ApplicationListener=\
+org.example.springboot.listener.ApplicationStartingEventListener,\
+org.example.springboot.listener.ApplicationEnvironmentPreparedEventListener,\
+org.example.springboot.listener.ApplicationContextInitializedEventListener,\
+org.example.springboot.listener.ApplicationPreparedEventListener,\
+org.example.springboot.listener.ApplicationStartedEventListener,\
+org.example.springboot.listener.AvailabilityChangeEventListener,\
+org.example.springboot.listener.ApplicationReadyEventListener,\
+org.example.springboot.listener.ApplicationFailedEventListener,\
+org.example.springboot.listener.ContextStartedEventListener,\
+org.example.springboot.listener.ContextStoppedEventListener
+
 # Spring Initializer
 org.springframework.context.ApplicationContextInitializer=\
 org.example.springboot.initializer.CustomApplicationContextInitializer

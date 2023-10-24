@@ -1,6 +1,6 @@
 spring:
   application:
-    name: springboot-demo
+    name: springboot
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://192.168.19.69:3306/ips?useUnicode=true&characterEncoding=utf-8&useSSL=false

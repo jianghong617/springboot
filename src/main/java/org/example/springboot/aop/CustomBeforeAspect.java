@@ -22,6 +22,6 @@ public class CustomBeforeAspect {
 
     @Before("pointcut()")
     public void controllerBefore(JoinPoint joinPoint) throws Throwable {
-        System.out.println("前置开始...");
+        System.out.println("CustomBeforeAspect->前置通知");
     }
 }

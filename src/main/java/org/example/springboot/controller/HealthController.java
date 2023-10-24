@@ -15,6 +15,6 @@ public class HealthController {
 
     @GetMapping("/health")
     public void health() {
-        System.out.println("我是健康的！");
+        System.out.println("我是健康的.");
     }
 }

@@ -1,11 +1,9 @@
 package org.example.springboot.ext;
 
-import org.example.springboot.dto.UserDTO;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor;
-import org.springframework.beans.factory.support.RootBeanDefinition;
 
 /**
  * {@code CustomBeanDefinitionRegistryPostProcessor}
@@ -18,19 +16,11 @@ public class CustomBeanDefinitionRegistryPostProcessor implements BeanDefinition
 
     @Override
     public void postProcessBeanDefinitionRegistry(BeanDefinitionRegistry registry) throws BeansException {
-        System.out.println("BeanDefinition数量：" + registry.getBeanDefinitionCount());
-
-        System.out.println("自定义BeanDefinition注册开始....");
-        RootBeanDefinition rootBeanDefinition = new RootBeanDefinition(UserDTO.class);
-        registry.registerBeanDefinition("userDTO", rootBeanDefinition);
-        System.out.println("自定义BeanDefinition注册结束....");
+        System.out.println("spring->BeanDefinitionRegistryPostProcessor->postProcessBeanDefinitionRegistry");
     }
 
     @Override
     public void postProcessBeanFactory(ConfigurableListableBeanFactory beanFactory) throws BeansException {
-        System.out.println("CustomBeanDefinitionRegistryPostProcessor->postProcessBeanFactory()");
-        System.out.println("BeanDefinition数量：" + beanFactory.getBeanDefinitionCount());
-        UserDTO bean = beanFactory.getBean(UserDTO.class);
-        System.out.println(bean);
+        System.out.println("spring->BeanDefinitionRegistryPostProcessor->postProcessBeanFactory");
     }
 }

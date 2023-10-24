@@ -1,6 +1,7 @@
 package org.example.springboot.ext;
 
 import lombok.SneakyThrows;
+import org.example.springboot.service.impl.CustomServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor;
 
@@ -15,19 +16,20 @@ import java.lang.reflect.Constructor;
  */
 public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInstantiationAwareBeanPostProcessor {
 
+    // @SneakyThrows 相当于省略try-catch
+    @SneakyThrows
     @Override
     public Class<?> predictBeanType(Class<?> beanClass, String beanName) throws BeansException {
-        if (beanName.equals("customServiceImpl")) {
-//            System.out.println("CustomSmartInstantiationAwareBeanPostProcessor->predictBeanType()");
+        if (beanClass.equals(CustomServiceImpl.class)) {
+//            System.out.println("spring->SmartInstantiationAwareBeanPostProcessor->predictBeanType");
         }
         return beanClass;
     }
 
-    @SneakyThrows
     @Override
     public Constructor<?>[] determineCandidateConstructors(Class<?> beanClass, String beanName) throws BeansException {
-        if (beanName.equals("customServiceImpl")) {
-            System.out.println("CustomSmartInstantiationAwareBeanPostProcessor->determineCandidateConstructors()");
+        if (beanClass.equals(CustomServiceImpl.class)) {
+            System.out.println("spring->SmartInstantiationAwareBeanPostProcessor->determineCandidateConstructors");
         }
         return null;
     }
@@ -35,7 +37,7 @@ public class CustomSmartInstantiationAwareBeanPostProcessor implements SmartInst
     @Override
     public Object getEarlyBeanReference(Object bean, String beanName) throws BeansException {
         if (beanName.equals("customServiceImpl")) {
-            System.out.println("CustomSmartInstantiationAwareBeanPostProcessor->getEarlyBeanReference()");
+            System.out.println("spring->SmartInstantiationAwareBeanPostProcessor->getEarlyBeanReference");
         }
         return bean;
     }
