@@ -70,6 +70,9 @@ public class CustomServiceImpl implements CustomService, BeanFactoryAware, Envir
     public void setEnvironment(Environment environment) {
         this.environment = environment;
         System.out.println("CustomServiceImpl->setEnvironment");
+
+        String propertyValue = environment.getProperty("custom.property");
+        System.out.println("CaseApplicationContextInitializer->`custom.property`->" + propertyValue);
     }
 
     @Override

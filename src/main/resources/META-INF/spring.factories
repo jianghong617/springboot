@@ -13,4 +13,5 @@ org.example.springboot.listener.ContextStoppedEventListener
 
 # Spring Initializer
 org.springframework.context.ApplicationContextInitializer=\
-org.example.springboot.initializer.CustomApplicationContextInitializer
+org.example.springboot.initializer.CustomApplicationContextInitializer,\
+org.example.springboot.initializer.CaseApplicationContextInitializer

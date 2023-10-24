@@ -1,6 +1,7 @@
 package org.example.springboot.config;
 
 import org.example.springboot.filter.CustomFilter;
+import org.example.springboot.filter.OtherFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -17,5 +18,10 @@ public class FilterConfigure {
     @Bean
     public CustomFilter customFilter() {
         return new CustomFilter();
+    }
+
+    @Bean
+    public OtherFilter otherFilter() {
+        return new OtherFilter();
     }
 }
