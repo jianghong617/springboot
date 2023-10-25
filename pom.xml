@@ -46,5 +46,10 @@
             <artifactId>datasource-spring-boot-starter</artifactId>
             <version>1.0.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-core</artifactId>
+            <version>5.8.10</version>
+        </dependency>
     </dependencies>
 </project>
