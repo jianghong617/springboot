@@ -2,7 +2,10 @@ package org.example.springboot.async_program;
 
 import lombok.extern.slf4j.Slf4j;
 
-import java.util.concurrent.*;
+import java.util.concurrent.CompletableFuture;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 /**
  * {@code CompletableFutureAsyncProgram}

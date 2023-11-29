@@ -24,7 +24,7 @@ public class AnyOfCompletableFuture {
         ExecutorService executorService = Executors.newFixedThreadPool(10);
         long startTime = System.currentTimeMillis();
         //1、使用自定义线程池，开启异步任务01
-        CompletableFuture<Integer> supplyAsyncRes01 = CompletableFuture.supplyAsync(()->{
+        CompletableFuture<Integer> supplyAsyncRes01 = CompletableFuture.supplyAsync(() -> {
             int res = 1;
             try {
                 //执行任务1 开始执行任务01,当前线程为：12
@@ -39,7 +39,7 @@ public class AnyOfCompletableFuture {
             return res;
         }, executorService);
         //2、使用自定义线程池，开启异步任务02
-        CompletableFuture<Integer> supplyAsyncRes02 = CompletableFuture.supplyAsync(()->{
+        CompletableFuture<Integer> supplyAsyncRes02 = CompletableFuture.supplyAsync(() -> {
             int res = 1;
             try {
                 //执行任务02 开始执行任务02,当前线程为：13
@@ -54,7 +54,7 @@ public class AnyOfCompletableFuture {
             return res;
         }, executorService);
         //3、使用自定义线程池，开启异步任务03
-        CompletableFuture<Integer> supplyAsyncRes03 = CompletableFuture.supplyAsync(()->{
+        CompletableFuture<Integer> supplyAsyncRes03 = CompletableFuture.supplyAsync(() -> {
             int res = 1;
             try {
                 //执行任务02 开始执行任务02,当前线程为：13
@@ -69,7 +69,7 @@ public class AnyOfCompletableFuture {
             return res;
         }, executorService);
         //4、开始任务组合
-        CompletableFuture<Object> anyOfy = CompletableFuture.anyOf(supplyAsyncRes01,supplyAsyncRes02,supplyAsyncRes03);
+        CompletableFuture<Object> anyOfy = CompletableFuture.anyOf(supplyAsyncRes01, supplyAsyncRes02, supplyAsyncRes03);
         //等待所有任务完成
         log.info("某一任务执行完成,组合后返回结果为：" + anyOfy.get());
         //获取所有任务的返回结果

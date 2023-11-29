@@ -1,7 +1,5 @@
 package org.example.springboot.config;
 
-import org.example.springboot.service.ImportSelectorService;
-import org.example.springboot.service.ImportService;
 import org.example.springboot.service.impl.ImportSelectorServiceImpl;
 import org.example.springboot.service.impl.ImportServiceImpl;
 import org.springframework.context.annotation.Configuration;

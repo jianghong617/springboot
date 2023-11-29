@@ -5,7 +5,6 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.SmartLifecycle;
 import org.springframework.context.event.ContextStoppedEvent;
-import org.springframework.stereotype.Component;
 
 /**
  * {@code CustomContextStoppedLifecycle}

@@ -12,7 +12,8 @@ import org.springframework.stereotype.Component;
  * @since 2.2.0
  */
 @Component
-public class CustomEventListener /**implements ApplicationListener<CustomEvent>**/ {
+public class CustomEventListener /**implements ApplicationListener<CustomEvent>**/
+{
 
 //    @Override
 //    public void onApplicationEvent(CustomEvent event) {

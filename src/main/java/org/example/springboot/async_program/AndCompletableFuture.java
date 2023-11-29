@@ -21,7 +21,7 @@ public class AndCompletableFuture {
 
         long startTime = System.currentTimeMillis();
         //1、使用自定义线程池，开启异步任务01
-        CompletableFuture<Integer> supplyAsyncRes01 = CompletableFuture.supplyAsync(()->{
+        CompletableFuture<Integer> supplyAsyncRes01 = CompletableFuture.supplyAsync(() -> {
             int res = 1;
             try {
                 //执行任务1 开始执行任务01,当前线程为：12
@@ -35,8 +35,8 @@ public class AndCompletableFuture {
             return res;
         }, Executors.newCachedThreadPool());
         //2、使用自定义线程池，开启异步任务02
-        CompletableFuture<Integer> supplyAsyncRes02 = CompletableFuture.supplyAsync(()->{
-            int res=1;
+        CompletableFuture<Integer> supplyAsyncRes02 = CompletableFuture.supplyAsync(() -> {
+            int res = 1;
             try {
                 //执行任务02 开始执行任务02,当前线程为：13
                 log.info("开始执行任务02,当前线程为：" + Thread.currentThread().getId());
@@ -50,7 +50,7 @@ public class AndCompletableFuture {
             return res;
         });
         //3、任务02：将任务1与任务2开始任务组合
-        CompletableFuture<Integer> thenCombineAsyncRes = supplyAsyncRes01.thenCombineAsync(supplyAsyncRes02,(res01, res02)->{
+        CompletableFuture<Integer> thenCombineAsyncRes = supplyAsyncRes01.thenCombineAsync(supplyAsyncRes02, (res01, res02) -> {
             // thenCombine 会将前两个任务的执行结果作为方法入参，有返回值
             // thenAcceptBoth 会将两个任务的执行结果作为方法入参，无返回值
             // runAfterBoth 不会把前两个任务的执行结果作为方法入参，无返回值

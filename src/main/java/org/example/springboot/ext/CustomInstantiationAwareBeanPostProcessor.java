@@ -1,6 +1,5 @@
 package org.example.springboot.ext;
 
-import org.example.springboot.service.CustomService;
 import org.example.springboot.service.impl.CustomServiceImpl;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.PropertyValues;

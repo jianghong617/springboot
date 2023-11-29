@@ -22,7 +22,7 @@ public class ThenComposeCompletableFuture {
         ExecutorService executor = Executors.newSingleThreadExecutor();
         // 第二个任务 在某个任务执行完成后，将该任务的执行结果，作为方法入参，去执行指定的方法,
         // 该方法会返回一个新的CompletableFuture实例。
-        CompletableFuture<String> futureRes = CompletableFuture.supplyAsync(()-> "第二个任务02", executor).thenComposeAsync(data->{
+        CompletableFuture<String> futureRes = CompletableFuture.supplyAsync(() -> "第二个任务02", executor).thenComposeAsync(data -> {
             log.info("data数据为：" + data);
             return res01;
         }, executor);
