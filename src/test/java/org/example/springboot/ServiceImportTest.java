@@ -11,10 +11,8 @@
  */
 package org.example.springboot;
 
-import com.zero.service.TestService;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 /**
@@ -28,13 +26,13 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class ServiceImportTest {
 
-    @Autowired
-    private TestService testService;
-
-    @Test
-    void test() {
-        log.info(testService.test("wangqin"));
-    }
+//    @Autowired
+//    private TestService testService;
+//
+//    @Test
+//    void test() {
+//        log.info(testService.test("wangqin"));
+//    }
 
     @Test
     void testContextStartedEvent() {
