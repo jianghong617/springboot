@@ -1,6 +1,18 @@
+/*
+ * Copyright (c) 2024 Zero Co., Ltd. All rights reserved.
+ *
+ * This software is owned by Zero Co., Ltd.
+ * Without the official authorization of Zero Co., Ltd.,
+ * no enterprise or individual can obtain, read, install,
+ * or disseminate any content protected by intellectual
+ * property rights involved in this software.
+ *
+ * The website of zero, please see <https://zero.com>
+ */
 package org.example.springboot;
 
 import cn.hutool.core.io.IoUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -18,8 +30,9 @@ import java.nio.charset.StandardCharsets;
  * @date 2023/10/24
  * @since 2.3.0
  */
+@Slf4j
 @SpringBootTest
-public class JavaResourceDemo {
+class JavaResourceTest {
 
     @Test
     void test() throws IOException {

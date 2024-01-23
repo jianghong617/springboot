@@ -9,25 +9,25 @@
  *
  * The website of zero, please see <https://zero.com>
  */
-package org.example.springboot.thread;
+package org.example.springboot.log;
 
-import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * {@code Thread5}
- * lambda表达式
+ * {@code LogbackExample}
  *
  * @author jianghong
- * @date 2023/10/25
- * @since 2.3.0
+ * @date 2024/01/23
+ * @since 1.4.0
  */
-@Slf4j
-public class Thread5 {
+public class LogbackExample {
+
+    private static final Logger logger = LoggerFactory.getLogger(LogbackExample.class);
 
     public static void main(String[] args) {
-        log.info(Thread.currentThread().getName() + " -> jvm主线程");
-        new Thread(() -> {
-            log.info(Thread.currentThread().getName() + " -> lambda表达式");
-        }).start();
+        logger.info("我是org.slf4j.Logger");
+        logger.warn("我是org.slf4j.Logger");
+        logger.error("我是org.slf4j.Logger");
     }
 }
