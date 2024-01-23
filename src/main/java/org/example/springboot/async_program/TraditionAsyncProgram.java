@@ -1,5 +1,7 @@
 package org.example.springboot.async_program;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.concurrent.*;
 
 /**
@@ -9,6 +11,7 @@ import java.util.concurrent.*;
  * @date 2023/10/25
  * @since 2.3.0
  */
+@Slf4j
 public class TraditionAsyncProgram {
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -16,10 +19,10 @@ public class TraditionAsyncProgram {
 
 //        ExecutorService pool = Executors.newCachedThreadPool();
 //        Future<String> future = pool.submit(() -> {
-//            System.out.println(Thread.currentThread().getName() + " -> Executors工厂创建线程池");
+//            log.info(Thread.currentThread().getName() + " -> Executors工厂创建线程池");
 //            return "hello";
 //        });
-//        System.out.println(Thread.currentThread().getName() + " -> 获取到的值为：" + future.get());
+//        log.info(Thread.currentThread().getName() + " -> 获取到的值为：" + future.get());
 
 
         // Future.get()是阻塞调用, 可以通过Future.isDone()在程序中做轮询
@@ -44,8 +47,8 @@ public class TraditionAsyncProgram {
         downLatch.await();
         //模拟主程序耗时时间
         Thread.sleep(600);
-        System.out.println("获取用户信息:" + userFuture.get());
-        System.out.println("获取商品信息:" + goodsFuture.get());
-        System.out.println("总共用时" + (System.currentTimeMillis() - startTime) + "ms");
+        log.info("获取用户信息:" + userFuture.get());
+        log.info("获取商品信息:" + goodsFuture.get());
+        log.info("总共用时" + (System.currentTimeMillis() - startTime) + "ms");
     }
 }

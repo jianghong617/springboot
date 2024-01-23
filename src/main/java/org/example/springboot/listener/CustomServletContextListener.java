@@ -1,5 +1,6 @@
 package org.example.springboot.listener;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
@@ -14,6 +15,7 @@ import javax.servlet.ServletContextListener;
  * @date 2023/09/14
  * @since 2.2.0
  */
+@Slf4j
 public class CustomServletContextListener implements ServletContextListener, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
@@ -25,11 +27,11 @@ public class CustomServletContextListener implements ServletContextListener, App
 
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-        System.out.println("servlet->ServletContextListener->contextInitialized");
+        log.info("servlet->ServletContextListener->contextInitialized");
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-        System.out.println("servlet->ServletContextListener->contextDestroyed");
+        log.info("servlet->ServletContextListener->contextDestroyed");
     }
 }

@@ -1,5 +1,7 @@
 package org.example.springboot.thread;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * {@code Thread1}
  * 继承Thread，重写run方法
@@ -8,15 +10,16 @@ package org.example.springboot.thread;
  * @date 2023/10/25
  * @since 2.3.0
  */
+@Slf4j
 public class Thread1 extends Thread {
 
     @Override
     public void run() {
-        System.out.println(Thread.currentThread().getName() + " -> 继承Thread，重写run方法");
+        log.info(Thread.currentThread().getName() + " -> 继承Thread，重写run方法");
     }
 
     public static void main(String[] args) {
-        System.out.println(Thread.currentThread().getName() + " -> jvm主线程");
+        log.info(Thread.currentThread().getName() + " -> jvm主线程");
         Thread1 thread1 = new Thread1();
         thread1.start(); // 必须调用start()才会创建一个新的线程
     }

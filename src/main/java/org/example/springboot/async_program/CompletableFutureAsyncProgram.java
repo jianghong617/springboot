@@ -21,7 +21,7 @@ public class CompletableFutureAsyncProgram {
 
         // 第一种创建方式
         CompletableFuture<Integer> future1 = CompletableFuture.supplyAsync(() -> {
-            System.out.println(Thread.currentThread().getName() + " -> 使用默认内置线程池ForkJoinPool.commonPool()");
+            log.info(Thread.currentThread().getName() + " -> 使用默认内置线程池ForkJoinPool.commonPool()");
             try {
                 Thread.sleep(500);
             } catch (InterruptedException e) {
@@ -38,18 +38,18 @@ public class CompletableFutureAsyncProgram {
 
 //        // 第二种创建方式
 //        CompletableFuture<Integer> future2 = CompletableFuture.supplyAsync(() -> {
-//            System.out.println(Thread.currentThread().getName() + " -> 使用自建线程池");
+//            log.info(Thread.currentThread().getName() + " -> 使用自建线程池");
 //            return 2;
 //        }, Executors.newSingleThreadExecutor());
 //
 //        // 第三种创建方式
 //        CompletableFuture.runAsync(() -> {
-//            System.out.println(Thread.currentThread().getName() + " -> 使用默认内置线程池ForkJoinPool.commonPool()");
+//            log.info(Thread.currentThread().getName() + " -> 使用默认内置线程池ForkJoinPool.commonPool()");
 //        });
 //
 //        // 第四种创建方式
 //        CompletableFuture.runAsync(() -> {
-//            System.out.println(Thread.currentThread().getName() + " -> 使用自建线程池");
+//            log.info(Thread.currentThread().getName() + " -> 使用自建线程池");
 //        }, Executors.newSingleThreadExecutor());
 
     }

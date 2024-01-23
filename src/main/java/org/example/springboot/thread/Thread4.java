@@ -1,5 +1,7 @@
 package org.example.springboot.thread;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * {@code Thread4}
  * 使用匿名内部类，实现Runnable接口
@@ -8,14 +10,15 @@ package org.example.springboot.thread;
  * @date 2023/10/25
  * @since 2.3.0
  */
+@Slf4j
 public class Thread4 {
 
     public static void main(String[] args) {
-        System.out.println(Thread.currentThread().getName() + " -> jvm主线程");
+        log.info(Thread.currentThread().getName() + " -> jvm主线程");
         new Thread(new Runnable() {
             @Override
             public void run() {
-                System.out.println(Thread.currentThread().getName() + " -> 使用匿名内部类，实现Runnable接口");
+                log.info(Thread.currentThread().getName() + " -> 使用匿名内部类，实现Runnable接口");
             }
         }).start();
     }

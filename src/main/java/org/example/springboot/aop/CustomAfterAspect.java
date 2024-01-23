@@ -1,5 +1,6 @@
 package org.example.springboot.aop;
 
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.Aspect;
@@ -12,6 +13,7 @@ import org.aspectj.lang.annotation.Pointcut;
  * @date 2023/09/13
  * @since 2.2.0
  */
+@Slf4j
 @Aspect
 public class CustomAfterAspect {
 
@@ -22,6 +24,6 @@ public class CustomAfterAspect {
 
     @After("pointcut()")
     public void controllerAfter(JoinPoint joinPoint) throws Throwable {
-        System.out.println("CustomAfterAspect->后置通知");
+        log.info("CustomAfterAspect->后置通知");
     }
 }

@@ -1,6 +1,7 @@
 package org.example.springboot.service.impl;
 
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.example.springboot.service.CustomService;
 import org.example.springboot.service.ImportSelectorService;
 import org.springframework.beans.BeansException;
@@ -22,6 +23,7 @@ import javax.annotation.PreDestroy;
  * @date 2023/09/14
  * @since 2.2.0
  */
+@Slf4j
 @Data
 @Service
 public class CustomServiceImpl implements CustomService, BeanFactoryAware, EnvironmentAware, EmbeddedValueResolverAware,
@@ -51,7 +53,7 @@ public class CustomServiceImpl implements CustomService, BeanFactoryAware, Envir
 
     @PostConstruct
     private void init() {
-        System.out.println("CustomServiceImpl->init");
+        log.info("CustomServiceImpl->init");
         importSelectorService.testBeanRegistry();
     }
 
@@ -63,66 +65,66 @@ public class CustomServiceImpl implements CustomService, BeanFactoryAware, Envir
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
-        System.out.println("CustomServiceImpl->setBeanFactory");
+        log.info("CustomServiceImpl->setBeanFactory");
     }
 
     @Override
     public void setEnvironment(Environment environment) {
         this.environment = environment;
-        System.out.println("CustomServiceImpl->setEnvironment");
+        log.info("CustomServiceImpl->setEnvironment");
 
         String propertyValue = environment.getProperty("custom.property");
-        System.out.println("CaseApplicationContextInitializer->`custom.property`->" + propertyValue);
+        log.info("CaseApplicationContextInitializer->`custom.property`->" + propertyValue);
     }
 
     @Override
     public void setEmbeddedValueResolver(StringValueResolver resolver) {
         this.resolver = resolver;
-        System.out.println("CustomServiceImpl->setEmbeddedValueResolver");
+        log.info("CustomServiceImpl->setEmbeddedValueResolver");
     }
 
     @Override
     public void setResourceLoader(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
-        System.out.println("CustomServiceImpl->setResourceLoader");
+        log.info("CustomServiceImpl->setResourceLoader");
     }
 
     @Override
     public void setApplicationEventPublisher(ApplicationEventPublisher applicationEventPublisher) {
         this.applicationEventPublisher = applicationEventPublisher;
-        System.out.println("CustomServiceImpl->setApplicationEventPublisher");
+        log.info("CustomServiceImpl->setApplicationEventPublisher");
     }
 
     @Override
     public void setMessageSource(MessageSource messageSource) {
         this.messageSource = messageSource;
-        System.out.println("CustomServiceImpl->setMessageSource");
+        log.info("CustomServiceImpl->setMessageSource");
     }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
         this.applicationContext = applicationContext;
-        System.out.println("CustomServiceImpl->setApplicationContext");
+        log.info("CustomServiceImpl->setApplicationContext");
     }
 
     @Override
     public void setBeanName(String name) {
         this.beanName = name;
-        System.out.println("CustomServiceImpl->setBeanName");
+        log.info("CustomServiceImpl->setBeanName");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("CustomServiceImpl->afterPropertiesSet");
+        log.info("CustomServiceImpl->afterPropertiesSet");
     }
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("CustomServiceImpl->destroy");
+        log.info("CustomServiceImpl->destroy");
     }
 
     @PreDestroy
     private void destroyz() {
-        System.out.println("CustomServiceImpl->destroyz");
+        log.info("CustomServiceImpl->destroyz");
     }
 }

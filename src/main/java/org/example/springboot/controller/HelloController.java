@@ -1,5 +1,6 @@
 package org.example.springboot.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.springboot.dto.UserDTO;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
@@ -19,6 +20,7 @@ import java.time.ZoneId;
  * @date 2023/09/13
  * @since 2.2.0
  */
+@Slf4j
 @RestController
 public class HelloController implements BeanFactoryAware {
 
@@ -35,7 +37,7 @@ public class HelloController implements BeanFactoryAware {
         session.setAttribute("name", "jianghong");
 
         LocalDateTime expireTime = LocalDateTime.ofInstant(Instant.ofEpochMilli(session.getMaxInactiveInterval()), ZoneId.systemDefault());
-        System.out.println("session信息: sessionId:" + session.getId() + ", 过期时间:" + expireTime);
+        log.info("session信息: sessionId:" + session.getId() + ", 过期时间:" + expireTime);
         return "Hello " + name;
     }
 

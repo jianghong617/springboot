@@ -1,5 +1,6 @@
 package org.example.springboot.aop;
 
+import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -12,6 +13,7 @@ import org.aspectj.lang.annotation.Pointcut;
  * @date 2023/09/13
  * @since 2.2.0
  */
+@Slf4j
 @Aspect
 public class CustomAroundAspect {
 
@@ -22,9 +24,9 @@ public class CustomAroundAspect {
 
     @Around("pointcut()")
     public Object controllerAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("CustomAroundAspect->环绕通知开始");
+        log.info("CustomAroundAspect->环绕通知开始");
         Object proceed = joinPoint.proceed();
-        System.out.println("CustomAroundAspect->环绕通知结束");
+        log.info("CustomAroundAspect->环绕通知结束");
 
         return proceed;
     }

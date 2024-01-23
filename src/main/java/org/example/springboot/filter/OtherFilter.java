@@ -1,5 +1,6 @@
 package org.example.springboot.filter;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.Ordered;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -16,13 +17,14 @@ import java.io.IOException;
  * @date 2023/10/24
  * @since 2.3.0
  */
+@Slf4j
 public class OtherFilter extends OncePerRequestFilter implements Ordered {
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
-        System.out.println("OtherFilter->doFilterInternal->开始...");
+        log.info("OtherFilter->doFilterInternal->开始...");
         filterChain.doFilter(request, response);
-        System.out.println("OtherFilter->doFilterInternal->结束...");
+        log.info("OtherFilter->doFilterInternal->结束...");
     }
 
     @Override

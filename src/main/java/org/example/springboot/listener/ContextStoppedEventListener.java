@@ -1,5 +1,6 @@
 package org.example.springboot.listener;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextStoppedEvent;
 
@@ -10,10 +11,11 @@ import org.springframework.context.event.ContextStoppedEvent;
  * @date 2023/10/24
  * @since 2.3.0
  */
+@Slf4j
 public class ContextStoppedEventListener implements ApplicationListener<ContextStoppedEvent> {
 
     @Override
     public void onApplicationEvent(ContextStoppedEvent event) {
-        System.out.println("spring->ContextStoppedEventListener->ContextStoppedEvent");
+        log.info("spring->ContextStoppedEventListener->ContextStoppedEvent");
     }
 }

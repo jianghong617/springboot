@@ -1,5 +1,6 @@
 package org.example.springboot.listener;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.availability.AvailabilityChangeEvent;
 import org.springframework.context.ApplicationListener;
 
@@ -10,10 +11,11 @@ import org.springframework.context.ApplicationListener;
  * @date 2023/10/23
  * @since 2.3.0
  */
+@Slf4j
 public class AvailabilityChangeEventListener implements ApplicationListener<AvailabilityChangeEvent> {
 
     @Override
     public void onApplicationEvent(AvailabilityChangeEvent event) {
-        System.out.println("springboot->AvailabilityChangeEventListener->AvailabilityChangeEvent");
+        log.info("springboot->AvailabilityChangeEventListener->AvailabilityChangeEvent");
     }
 }

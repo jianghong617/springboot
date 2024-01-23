@@ -30,9 +30,9 @@ public class DataSourceTest {
         ResultSet resultSet = preparedStatement.executeQuery();
 
         while (resultSet.next()) {
-            System.out.println(resultSet.getString("account"));
-            System.out.println(resultSet.getString("name"));
-            System.out.println("################################");
+            log.info(resultSet.getString("account"));
+            log.info(resultSet.getString("name"));
+            log.info("################################");
         }
     }
 }

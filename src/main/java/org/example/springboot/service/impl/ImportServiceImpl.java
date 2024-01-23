@@ -20,11 +20,11 @@ public class ImportServiceImpl implements ImportService, BeanFactoryAware, Initi
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
-//        System.out.println("ImportServiceImpl->setBeanFactory");
+//        log.info("ImportServiceImpl->setBeanFactory");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-//        System.out.println("ImportServiceImpl->afterPropertiesSet");
+//        log.info("ImportServiceImpl->afterPropertiesSet");
     }
 }

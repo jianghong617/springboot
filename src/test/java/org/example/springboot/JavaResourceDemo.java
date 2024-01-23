@@ -29,6 +29,6 @@ public class JavaResourceDemo {
 
         InputStream inputStream = urlConnection.getInputStream();
         String content = IoUtil.read(new InputStreamReader(inputStream, StandardCharsets.UTF_8));
-        System.out.println(content);
+        log.info(content);
     }
 }

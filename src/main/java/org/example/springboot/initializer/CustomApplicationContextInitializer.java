@@ -16,6 +16,6 @@ public class CustomApplicationContextInitializer implements ApplicationContextIn
 
     @Override
     public void initialize(ConfigurableApplicationContext applicationContext) {
-        System.out.println("spring->ApplicationContextInitializer->initialize");
+        log.info("spring->ApplicationContextInitializer->initialize");
     }
 }

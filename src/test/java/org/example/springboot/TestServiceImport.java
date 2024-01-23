@@ -20,7 +20,7 @@ public class TestServiceImport {
 
     @Test
     void test() {
-        System.out.println(testService.test("wangqin"));
+        log.info(testService.test("wangqin"));
     }
 
     @Test

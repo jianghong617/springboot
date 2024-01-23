@@ -31,16 +31,16 @@ public class ImportSelectorServiceImpl implements ImportSelectorService, BeanFac
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
-//        System.out.println("ImportSelectorServiceImpl->setBeanFactory");
+//        log.info("ImportSelectorServiceImpl->setBeanFactory");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-//        System.out.println("ImportSelectorServiceImpl->afterPropertiesSet");
+//        log.info("ImportSelectorServiceImpl->afterPropertiesSet");
     }
 
     @Override
     public void testBeanRegistry() {
-//        System.out.println("test ImportSelectorServiceImpl registry success");
+//        log.info("test ImportSelectorServiceImpl registry success");
     }
 }

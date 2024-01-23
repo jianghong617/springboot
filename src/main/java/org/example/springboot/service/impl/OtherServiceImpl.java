@@ -1,5 +1,6 @@
 package org.example.springboot.service.impl;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.springboot.event.CustomEvent;
 import org.example.springboot.service.OtherService;
 import org.springframework.beans.BeansException;
@@ -17,6 +18,7 @@ import org.springframework.context.ApplicationContextAware;
  * @date 2023/09/18
  * @since 2.2.0
  */
+@Slf4j
 public class OtherServiceImpl implements OtherService, BeanFactoryAware, ApplicationContextAware, InitializingBean, SmartInitializingSingleton {
 
     private BeanFactory beanFactory;
@@ -25,12 +27,12 @@ public class OtherServiceImpl implements OtherService, BeanFactoryAware, Applica
     @Override
     public void setBeanFactory(BeanFactory beanFactory) throws BeansException {
         this.beanFactory = beanFactory;
-//        System.out.println("OtherServiceImpl->setBeanFactory");
+//        log.info("OtherServiceImpl->setBeanFactory");
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-//        System.out.println("OtherServiceImpl->afterPropertiesSet");
+//        log.info("OtherServiceImpl->afterPropertiesSet");
     }
 
     @Override
@@ -40,10 +42,10 @@ public class OtherServiceImpl implements OtherService, BeanFactoryAware, Applica
 
     @Override
     public void afterSingletonsInstantiated() {
-        System.out.println("当前ioc容器下，所有单例bean初始化完成...");
+        log.info("当前ioc容器下，所有单例bean初始化完成...");
 
-        System.out.println("发布自定义事件`CustomEvent`开始");
+        log.info("发布自定义事件`CustomEvent`开始");
         this.applicationContext.publishEvent(new CustomEvent(new Object()));
-        System.out.println("发布自定义事件`CustomEvent`结束");
+        log.info("发布自定义事件`CustomEvent`结束");
     }
 }
