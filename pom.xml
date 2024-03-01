@@ -148,6 +148,7 @@ The website of zero, please see <https://zero.com>
                         <exclude>LICENSE</exclude>
                         <exclude>**/.mvn/**</exclude>
                         <exclude>**/*.properties</exclude>
+                        <exclude>**/*.factories</exclude>
                         <exclude>**/*.yml</exclude>
                         <exclude>**/*.xml</exclude>
                         <exclude>**/*.txt</exclude>
