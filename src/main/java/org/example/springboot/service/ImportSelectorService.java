@@ -16,7 +16,7 @@ package org.example.springboot.service;
  *
  * @author jianghong
  * @date 2023/10/23
- * @since 2.3.0
+ * @since 1.0.0
  */
 public interface ImportSelectorService {
 

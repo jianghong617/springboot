@@ -18,7 +18,7 @@ import org.springframework.context.ApplicationEvent;
  *
  * @author jianghong
  * @date 2023/09/18
- * @since 2.2.0
+ * @since 1.0.0
  */
 public class CustomEvent extends ApplicationEvent {
 

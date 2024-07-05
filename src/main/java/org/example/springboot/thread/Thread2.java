@@ -19,7 +19,7 @@ import lombok.extern.slf4j.Slf4j;
  *
  * @author jianghong
  * @date 2023/10/25
- * @since 2.3.0
+ * @since 1.0.0
  */
 @Slf4j
 public class Thread2 implements Runnable {

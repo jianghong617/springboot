@@ -25,7 +25,7 @@ import org.springframework.stereotype.Service;
  *
  * @author jianghong
  * @date 2023/09/18
- * @since 2.2.0
+ * @since 1.0.0
  */
 // 如果不使用@Service, 当前类不会注入ioc容器。
 @Service

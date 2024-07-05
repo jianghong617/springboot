@@ -22,7 +22,7 @@ import org.springframework.context.event.ContextStoppedEvent;
  *
  * @author jianghong
  * @date 2023/10/24
- * @since 2.3.0
+ * @since 1.0.0
  */
 //@Component
 public class CustomContextStoppedLifecycle implements SmartLifecycle, ApplicationContextAware {

@@ -19,7 +19,7 @@ import org.springframework.stereotype.Component;
  *
  * @author jianghong
  * @date 2023/09/18
- * @since 2.2.0
+ * @since 1.0.0
  */
 @Component
 public class CustomFactoryBean implements FactoryBean<CustomFactoryBean.CustomInnerFactoryBean> {

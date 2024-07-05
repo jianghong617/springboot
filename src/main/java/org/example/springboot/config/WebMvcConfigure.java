@@ -22,7 +22,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  *
  * @author jianghong
  * @date 2023/09/13
- * @since 2.2.0
+ * @since 1.0.0
  */
 @Configuration
 public class WebMvcConfigure implements WebMvcConfigurer {

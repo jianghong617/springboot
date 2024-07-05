@@ -16,12 +16,13 @@ import org.springframework.scheduling.annotation.EnableAsync;
 
 /**
  * {@code AsyncConfigure}
+ * 启用异步注解@Async
  *
  * @author jianghong
  * @date 2023/10/25
- * @since 2.3.0
+ * @since 1.0.0
  */
-@EnableAsync //启用异步注解@Async
+@EnableAsync
 @Configuration
 public class AsyncConfigure {
 }

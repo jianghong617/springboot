@@ -15,6 +15,6 @@
  *
  * @author jianghong
  * @date 2023/10/25
- * @since 2.3.0
+ * @since 1.0.0
  */
 package org.example.springboot.thread;

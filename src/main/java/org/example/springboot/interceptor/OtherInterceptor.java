@@ -25,7 +25,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author jianghong
  * @date 2023/09/13
- * @since 2.2.0
+ * @since 1.0.0
  */
 @Slf4j
 public class OtherInterceptor implements HandlerInterceptor {

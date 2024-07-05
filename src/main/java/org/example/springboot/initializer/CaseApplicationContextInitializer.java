@@ -24,7 +24,7 @@ import java.util.Map;
  *
  * @author jianghong
  * @date 2023/10/24
- * @since 2.3.0
+ * @since 1.0.0
  */
 public class CaseApplicationContextInitializer implements ApplicationContextInitializer<ConfigurableApplicationContext> {
 

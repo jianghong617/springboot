@@ -24,7 +24,7 @@ import java.time.LocalDateTime;
  *
  * @author jianghong
  * @date 2023/09/14
- * @since 2.2.0
+ * @since 1.0.0
  */
 @Configuration
 public class LocalDateTimeFormatterConfigure {

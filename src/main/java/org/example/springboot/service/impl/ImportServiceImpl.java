@@ -22,7 +22,7 @@ import org.springframework.beans.factory.InitializingBean;
  *
  * @author jianghong
  * @date 2023/10/23
- * @since 2.3.0
+ * @since 1.0.0
  */
 public class ImportServiceImpl implements ImportService, BeanFactoryAware, InitializingBean {
 

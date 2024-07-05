@@ -23,7 +23,7 @@ import org.springframework.context.annotation.Configuration;
  *
  * @author jianghong
  * @date 2023/09/15
- * @since 2.2.0
+ * @since 1.0.0
  */
 @Configuration
 public class PostProcessorConfigure {

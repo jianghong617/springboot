@@ -21,7 +21,7 @@ import javax.servlet.ServletRequestListener;
  *
  * @author jianghong
  * @date 2023/09/14
- * @since 2.2.0
+ * @since 1.0.0
  */
 @Slf4j
 public class CustomServletRequestListener implements ServletRequestListener {

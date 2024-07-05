@@ -21,7 +21,7 @@ import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
  *
  * @author jianghong
  * @date 2023/09/15
- * @since 2.2.0
+ * @since 1.0.0
  */
 @Slf4j
 public class CustomBeanFactoryPostProcessor implements BeanFactoryPostProcessor {
